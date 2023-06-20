@@ -12,22 +12,33 @@ while continuar == 'S':
         except:
             print('Você não digitou um número. Tente novamente')
     
-    print('Digite o que você deseja fazer:\n[ 0 ] Soma\n[ 1 ] Subtração\n[ 2 ] Multiplicação\n[ 3 ] Divisão\n [ 4 ] Módulo\n[ 5 ] Dividendo')
+    print('\nDigite o que você deseja fazer:\n[ 0 ] Soma\n[ 1 ] Subtração\n[ 2 ] Multiplicação\n[ 3 ] Divisão\n[ 4 ] Módulo\n[ 5 ] Dividendo')
     escolha = input('Escolha: ')
 
-    if escolha == 0: 
-        print(f'A soma de {numero1} + {numero2} é {numero1 + numero2}')
-    elif escolha == 1:
-        print(f'A subtração de {numero1} - {numero2} é {numero1 - numero2}')
-    elif escolha == 2:
-        print(f'A multiplicação de {numero1} x {numero2} é {numero1 * numero2}')
-    elif escolha == 3:
-        print(f'A divisão de {numero1} / {numero2} é {numero1 / numero2}')
-    elif escolha == 4:
-        print(f'O módulo de {numero1} por {numero2} é {numero1 % numero2}')
-    else:
-        print(f'O dividendo de {numero1} por {numero2} é {numero1 // numero2}')
+    while type(escolha) == str:
+        try:
+            escolha = int(escolha)
+        except:
+            print('Você não digitou uma opção válida')
 
-    continuar = input
+    if escolha == 0: 
+        print(f'\nA soma de {numero1} + {numero2} é {numero1 + numero2}')
+    elif escolha == 1:
+        print(f'\nA subtração de {numero1} - {numero2} é {numero1 - numero2}')
+    elif escolha == 2:
+        print(f'\nA multiplicação de {numero1} x {numero2} é {numero1 * numero2}')
+    elif escolha == 3:
+        print(f'\nA divisão de {numero1} / {numero2} é {numero1 / numero2}')
+    elif escolha == 4:
+        print(f'\nO módulo de {numero1} por {numero2} é {numero1 % numero2}')
+    else:
+        print(f'\nO dividendo de {numero1} por {numero2} é {numero1 // numero2}')
+
+
+    continuar = input('Você deseja continuar? [ S ] ou [ N ] ').strip().upper()
+
+    if continuar == 'N':
+        print('Acabou!')
+        
 
     
