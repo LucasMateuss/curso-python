@@ -30,8 +30,9 @@ while True:
     
     print(''.join(palavra_escondida))
 
+    count += 1
+
     if not acertou:
-        count += 1
         print('Nenhuma letra encontrada')
 
     if '*' not in palavra_escondida:
