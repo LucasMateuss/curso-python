@@ -16,13 +16,25 @@ while True:
             print('\nDigite uma opção válida')
 
     if escolha == 'i': 
-        produto = input('Digite o produto que deseja adicionar a lista: ')
+        produto = input('\nDigite o produto que deseja adicionar a lista: ')
         lista_compras.append(produto)
 
     elif escolha == 'a': 
-        indice = input('Digite o índice para apagar: ')
+        indice = input('\nDigite o índice para apagar: ')
 
         try:
             indice = int(indice)
+            lista_compras.pop(indice)
+        except ValueError: 
+            print('\nDigite um número inteiro')
+        except IndexError:
+            print('\nIndice não se encontra na lista')
+
         
-        
+
+    else:
+        print('\n')
+        for i, prod in enumerate(lista_compras):
+            print(i, prod)
+
+ 
