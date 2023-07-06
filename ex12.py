@@ -39,21 +39,18 @@ for digito in cpf_9_digitos:
     soma1 += count1 * digito
     count1 -=1
 
-soma_multiplicada_1 = soma1 * 10   
-resto_multiplicacao_1 = soma_multiplicada_1 % 11
+calculo1 = (soma1 * 10) %11
 
-digito1 = 0 if resto_multiplicacao_1 > 9 else resto_multiplicacao_1
-
+digito1 = 0 if calculo1 > 9 else calculo1
 
 for digito in cpf_10_digitos:
     digito = int(digito)
     soma2 += count2 * digito
     count2 -=1
 
-soma_multiplicada_2 = soma2 * 10   
-resto_multiplicacao_2 = soma_multiplicada_2 % 11
+calculo2 = (soma2 * 10) % 11
 
-digito2 = 0 if resto_multiplicacao_2 > 9 else resto_multiplicacao_2
+digito2 = 0 if calculo2 > 9 else calculo2
 
 cpf_calculado = f'{cpf_9_digitos}{digito1}{digito2}'
 
